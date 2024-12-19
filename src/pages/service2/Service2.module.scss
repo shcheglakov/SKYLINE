@@ -1,0 +1,33 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+
+    .content {
+        width: 1240px;
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+
+        >h1 {
+            font-size: 36px;
+            font-family: "MT-Bold";
+        }
+
+        >img {
+            width: 1350px;
+            align-self: flex-end;
+        }
+
+        .content_2 {
+            display: flex;
+            justify-content: space-between;
+
+            >p {
+                font-size: 24px;
+                font-family: "MT-Regular";
+            }
+        }
+    }
+}

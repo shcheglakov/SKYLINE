@@ -1,0 +1,33 @@
+.form_conatiner {
+    background-color: #E6E6E6;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 330px;
+    height: 262px;
+    padding-left: 25px;
+    padding-right: 25px;
+    >h1 {
+        font-size: 24px;
+        font-family: "MT-Bold";
+        margin: 0;
+        text-align: center;
+    }
+
+    >input {
+        background-color: #E6E6E6;
+        border: 0;
+        outline: none;
+        border-bottom: 2px solid black;
+        font-family: "MT-Regular";
+        font-size: 20px;
+        color: #F39200;
+    }
+
+    >button {
+        background-color: #F39200;
+        font-family: "MT-Regular";
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,45 @@
+.statistics_bg {
+    background-color: black;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    .statistics_block {
+        width: 1240px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        .statistics_item {
+            text-align: center;
+            >h1 {
+                color: #ffffff;
+                margin: 0;
+                font-family: "MT-Bold";
+                font-size: 80px;
+            }
+
+            >h2 {
+                color: #ffffff;
+                font-family: "MT-Bold";
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1239px) {
+    .statistics_bg {
+        .statistics_block {
+            width: 800px;
+            margin-top: 20px;
+            .statistics_item {
+                >h1 {
+                    font-size: 64px;
+                }
+    
+                >h2 {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}

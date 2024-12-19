@@ -1,0 +1,124 @@
+.footer_bg {
+    background-color: black;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+
+    .footer {
+        width: 1240px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        align-content: center;
+        margin-top: 100px;
+        margin-bottom: 100px;
+
+        .logo_container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            >p {
+                color: #ffffff;
+                font-size: 20px;
+                font-family: "MT-Regular";
+                margin: 0;
+                text-align: center;
+            }
+
+            >img {
+                width: 197px;
+            }
+        }
+
+        .contacts {
+            >p {
+                color: #ffffff;
+                font-size: 20px;
+                font-family: "MT-Medium";
+                margin: 0;
+                margin-bottom: 25px;
+            }
+            .contact_item {
+                display: flex;
+                gap: 15px;
+                margin-bottom: 25px;
+                cursor: pointer;
+                >img {
+                    width: 30px;
+                }
+                >p {
+                    color: #ffffff;
+                    font-size: 20px;
+                    font-family: "MT-Medium";
+                    margin: 0;
+                }
+            }
+        }
+
+        .info {
+            >p {
+                color: #ffffff;
+                font-size: 20px;
+                font-family: "MT-Medium";
+                margin: 0;
+                margin-bottom: 25px;
+            }
+        }
+
+        .map {
+            border: 3px solid #F39200;
+            border-radius: 30px;
+            width: 235px;
+            height: 235px;
+        }
+    }
+}
+
+@media (max-width: 1239px) {
+    .footer_bg {
+        .footer {
+            width: 800px;
+            margin-top: 100px;
+            margin-bottom: 100px;
+    
+            .logo_container {
+                >img {
+                    width: 150px;
+                }
+
+                >p {
+                    font-size: 14px;
+                }
+            }
+    
+            .contacts {
+                >p {
+                    font-size: 14px;
+                    margin-bottom: 25px;
+                }
+                .contact_item {
+                    gap: 15px;
+                    margin-bottom: 25px;
+                    >img {
+                        width: 20px;
+                    }
+                    >p {
+                        font-size: 12px;
+                    }
+                }
+            }
+    
+            .info {
+                >p {
+                    font-size: 12px;
+                    margin-bottom: 25px;
+                }
+            }
+    
+            .map {
+                width: 195px;
+                height: 195px;
+            }
+        }
+    }
+}
