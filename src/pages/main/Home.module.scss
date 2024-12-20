@@ -267,3 +267,103 @@
         }
     }
 }
+
+@media (max-width: 800px) {
+    .main {
+        .main_container {
+            width: 330px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            .main_content{
+                >p {
+                    font-size: 16px;
+                    font-family: "MT-Medium";
+                }
+
+                >img {
+                    display: none;
+                }
+            }
+            
+        }
+
+
+        .block_why {
+            .text_cont {
+                >h1 {
+                    font-size: 64px;
+                }
+
+                >span {
+                }
+            }
+    
+            .items_cont {
+                width: 330px;
+                flex-direction: column;
+                .item {
+                    width: 195px;
+                    height: 435px;
+            
+                    >h1 {
+                        font-size: 200px;
+                    }
+            
+                    >h2 {
+                        font-size: 22px;
+                    }
+            
+                    >p {
+                        font-size: 20px;
+                    }
+                }
+            
+                .item:hover {
+                    >h1 {
+                        font-size: 64px;
+                    }
+                }
+            }
+        }
+
+        .partners {
+            width: 330px;
+            gap: 10px;
+            flex-direction: column;
+            >img {
+                height: 20px;
+            }
+        }
+
+        .reviews {
+            >h1 {
+                font-size: 64px;
+            }
+    
+            .reviews_conatiner {
+                width: 330px;
+                flex-direction: column;
+                .reviews_item {
+                    width: 210px;
+                    height: 120px;
+                    padding: 15px;
+                    word-break: break-all;
+                    .nr_container {
+                        >p {
+                            margin: 0px;
+                            font-size: 14px;
+                            font-family: "MT-Medium";
+                        }
+
+                        .rating {
+                            >img {
+                                width: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

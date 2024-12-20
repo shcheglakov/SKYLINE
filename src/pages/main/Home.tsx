@@ -1,10 +1,26 @@
+import { useEffect, useState } from "react";
 import BigForm from "../../components/big_form/BigForm";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import Statistics from "../../components/statistics/Statistics";
 import styles from "./Home.module.scss";
+import SmallForm from "../../components/small_form/SmallForm";
 
 export default function Main() {
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  },[])
+
   const items = [
     {
       id: 1,
@@ -61,7 +77,12 @@ export default function Main() {
           Будем рады начать долгосрочное сотрудничество с новыми партнерами.
           </p>
         </div>
-        <BigForm />
+        {width > 800 ? (
+          <BigForm />
+        ) : (
+          <SmallForm />
+        )}
+        
       </div>
       <div className={styles.block_why}>
         <div className={styles.text_cont}>

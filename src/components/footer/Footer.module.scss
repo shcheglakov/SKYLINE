@@ -122,3 +122,51 @@
         }
     }
 }
+
+@media (max-width: 800px) {
+    .footer_bg {
+        .footer {
+            width: 330px;
+            flex-direction: column;
+            
+            .logo_container {
+                >img {
+                    width: 150px;
+                }
+
+                >p {
+                    font-size: 14px;
+                }
+            }
+    
+            .contacts {
+                >p {
+                    font-size: 14px;
+                    margin-bottom: 25px;
+                }
+                .contact_item {
+                    gap: 15px;
+                    margin-bottom: 25px;
+                    >img {
+                        width: 20px;
+                    }
+                    >p {
+                        font-size: 12px;
+                    }
+                }
+            }
+    
+            .info {
+                >p {
+                    font-size: 12px;
+                    margin-bottom: 25px;
+                }
+            }
+    
+            .map {
+                width: 195px;
+                height: 195px;
+            }
+        }
+    }
+}

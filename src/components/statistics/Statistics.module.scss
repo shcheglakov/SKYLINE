@@ -43,3 +43,22 @@
         }
     }
 }
+
+@media (max-width: 800px) {
+    .statistics_bg {
+        .statistics_block {
+            width: 330px;
+            margin-top: 20px;
+            flex-direction: column;
+            .statistics_item {
+                >h1 {
+                    font-size: 64px;
+                }
+    
+                >h2 {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}

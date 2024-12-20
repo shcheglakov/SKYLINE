@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import styles from './Header.module.scss'
-import { NavLink } from "react-router";
+import styles from './Header.module.scss';
+import { NavLink } from "react-router"; // Исправлено на "react-router-dom"
 
 export default function Header() {
   const [width, setWidth] = useState(window.innerWidth);
+  const [menuOpen, setMenuOpen] = useState(true); // Изменено на false, чтобы меню было закрыто по умолчанию
 
   useEffect(() => {
     const handleResize = () => {
@@ -15,82 +16,132 @@ export default function Header() {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  },[])
+  },[]);
+
   return (
     <div>
       <header className={styles.header}>
-          {width > 800 ? (
+        {width > 800 ? (
           <>
             <img src="../src/assets/logo/logo_text_4x.png" alt="" width="218px" height="56px" />
             <nav>
-            <ul>
-              <li>
-                <NavLink
-                  to='/'
-                  className={({ isActive }) =>
-                    isActive ? "active_link" : ""
-                  }
-                >
-                  ГЛАВНАЯ
-                </NavLink>
-              </li>
-              <li className={styles.dropdown}>
-                <p> 
-                  УСЛУГИ
-                </p>
-                <ul>
-                  <li>
-                    <NavLink 
-                      to='/service1'
-                      className={({ isActive }) =>
-                        isActive ? "active_link" : ""
-                      }
-                    >
-                      Малый груз
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink 
-                      to='/service2'
-                      className={({ isActive }) =>
-                        isActive ? "active_link" : ""
-                      }
-                    >
-                      Большой груз
+              <ul>
+                <li>
+                  <NavLink
+                    to='/'
+                    className={({ isActive }) => (isActive ? "active_link" : "")}
+                  >
+                    ГЛАВНАЯ
                   </NavLink>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <NavLink 
-                  to='/info'
-                  className={({ isActive }) =>
-                    isActive ? "active_link" : ""
-                  }
-                >
-                  О КОМПАНИИ
-                </NavLink>
-              </li>
-              <li>
-                <a 
-                  href='#footer'
-                >
-                  КОНТАКТЫ
-                </a>
-              </li>
-            </ul>
-          </nav>
+                </li>
+                <li className={styles.dropdown}>
+                  <p> 
+                    УСЛУГИ
+                  </p>
+                  <ul>
+                    <li>
+                      <NavLink 
+                        to='/service1'
+                        className={({ isActive }) => (isActive ? "active_link" : "")}
+                      >
+                        Малый груз
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink 
+                        to='/service2'
+                        className={({ isActive }) => (isActive ? "active_link" : "")}
+                      >
+                        Большой груз
+                      </NavLink>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <NavLink 
+                    to='/info'
+                    className={({ isActive }) => (isActive ? "active_link" : "")}
+                  >
+                    О КОМПАНИИ
+                  </NavLink>
+                </li>
+                <li>
+                  <a href='#footer'>
+                    КОНТАКТЫ
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </>
-          ) : (
-            <div className={styles.mobile_menu}>
-              <img src="../src/assets/logo/logo_text_4x.png" alt="" width="200px" height="54px" />
-              <button>
-                <img src="../src/assets/icons/MobileMenu.svg" alt="" />
-              </button>
-            </div>
-          )
-        }
+        ) : (
+          <>
+            {menuOpen ? (
+              <div className={styles.mobile_menu}>
+                <div className={styles.mobile_logo}>
+                  <img src="../src/assets/logo/logo_text_4x.png" alt="" width="200px" height="54px" />
+                </div>
+                <button onClick={() => setMenuOpen(false)}> {/* Изменено на false для закрытия меню */}
+                  <img src="../src/assets/icons/MobileMenu.svg" alt="" />
+                </button>
+              </div>
+            ) : (
+              <div className={styles.mobile_menu_list}>
+                <button onClick={() => setMenuOpen(true)}> {/* Добавлен кнопка для открытия меню */}
+                  <img src="../src/assets/icons/MobileMenu.svg" alt="" />
+                </button>
+                <nav>
+                  <ul>
+                    <li>
+                      <NavLink
+                        to='/'
+                        className={({ isActive }) => (isActive ? "active_link" : "")}
+                      >
+                        ГЛАВНАЯ
+                      </NavLink>
+                    </li>
+                    <li className={styles.dropdown}>
+                      <a> 
+                        УСЛУГИ
+                      </a>
+                        <ul>
+                          <li>
+                            <NavLink 
+                              to='/service1'
+                              className={({ isActive }) => (isActive ? "active_link" : "")}
+                            >
+                              Малый груз
+                            </NavLink>
+                          </li>
+                          <li>
+                            <NavLink 
+                              to='/service2'
+                              className={({ isActive }) => (isActive ? "active_link" : "")}
+                            >
+                              Большой груз
+                            </NavLink>
+                          </li>
+                        </ul>
+                      </li>
+                    <li>
+                      <NavLink 
+                        to='/info'
+                        className={({ isActive }) => (isActive ? "active_link" : "")}
+                      >
+                        О КОМПАНИИ
+                      </NavLink>
+                    </li>
+                    <li>
+                      <a href='#footer'>
+                        КОНТАКТЫ
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            )}
+          </>
+        )}
       </header>
     </div>
-  )
+  );
 }

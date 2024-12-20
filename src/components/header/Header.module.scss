@@ -53,17 +53,97 @@
 
     .mobile_menu {
         display: flex;
-        flex-direction: column; /* Вертикальное расположение элементов */
-        align-items: center; /* Центрирование по горизонтали */
-        justify-content: flex-start; /* Элементы будут в начале контейнера */
-        width: 100%; /* Занимает всю ширину */
+        align-items: center; // Выравнивание по вертикали
+        justify-content: space-between; // Распределение пространства между элементами
+        width: 100%; // Занять всю ширину
+        padding: 0 16px; 
 
+        .mobile_logo {
+            flex: 1; // Занять все доступное пространство
+            display: flex;
+            justify-content: center;
+        }
+        
         >button {
             background-color: #ffffff;
             border: 0;
-            align-self: flex-start;
+            align-self: center;
+
+            >img {
+                width: 39px;
+                height: 25px;
+            }
         }
         
+    }
+
+    .mobile_menu_list {
+        display: flex;
+        >button {
+            border: 0;
+            background-color: #ffffff;
+            padding: 0;
+        }
+
+        >nav {
+            >ul {
+                list-style: none;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding-left: 10px;
+                >li {
+                    >a {
+                        font-size: 14px;
+                    }
+
+                    >ul {
+                        list-style: none;
+
+                        >li {
+                            >a {
+                                font-size: 14px;
+                            }
+                        }
+                    }    
+                }
+
+                .dropdown {
+                    position: relative;
+                    >p {
+                        margin: 0;
+                        font-weight: 500;
+                        color: #000000;
+                        text-decoration: inherit;
+                        font-size: 14px;
+                        font-family: 'MT-Medium';
+                        cursor: pointer;
+                    }
+    
+                    >p:hover {
+                        text-decoration: underline;
+                    }
+    
+                    >ul {
+                        display: none;
+                        position: absolute;
+                        list-style-type: none;
+                        padding: 0;
+                        padding-top: 5px;
+    
+                        >li {
+                            padding-top: 5px;
+                        }
+                    }
+                }
+    
+                .dropdown:hover {
+                    >ul {
+                        display: block;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -105,9 +185,8 @@
 
 @media (max-width: 800px) {
     .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        width: 100%;
         padding: 10px;
+        display: block;
     }
 }
