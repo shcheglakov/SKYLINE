@@ -34,3 +34,37 @@
         border-radius: 10px;
     }
 }
+
+@media (max-width: 1239px) {
+    .form_conatiner {
+        width: 272px;
+        height: 219px;
+        padding-left: 12px;
+        padding-right: 12px;
+        >h1 {
+            font-size: 20px;
+            font-family: "MT-Bold";
+            margin: 0;
+            text-align: center;
+        }
+    
+        >input {
+            background-color: #E6E6E6;
+            border: 0;
+            outline: none;
+            border-bottom: 2px solid black;
+            font-family: "MT-Regular";
+            font-size: 14px;
+            color: #F39200;
+        }
+    
+        >button {
+            background-color: #F39200;
+            font-family: "MT-Regular";
+            font-size: 14px;
+            padding: 10px;
+            border: 0;
+            border-radius: 10px;
+        }
+    }
+}

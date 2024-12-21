@@ -100,9 +100,9 @@ export default function Main() {
         </div>
       </div>
       <div className={styles.partners}> 
-        <img src="../src/assets/img/wb.svg" alt="" />
-        <img src="../src/assets/img/dpd.svg" alt="" />
-        <img src="../src/assets/img/rs.svg" alt="" />
+        <img src="../src/assets/img/wb.svg" alt="" className={styles.wb_img} />
+        <img src="../src/assets/img/dpd.svg" alt="" className={styles.dpd_img} />
+        <img src="../src/assets/img/rs.svg" alt="" className={styles.rs_img} />
       </div>
       <div className={styles.reviews}>
         <h1>ОТЗЫВЫ</h1>

@@ -2,9 +2,9 @@ import styles from './Footer.module.scss'
 
 export default function Footer() {
   const hrefs = {
-    wp: "ываывавы",
-    email: "sdfsdfds@mail.ru",
-    phone: "+79162585519"
+    wp: "https://wa.me/79150422651",
+    email: "mailto:skyline-a.c@yandex.ru",
+    phone: "tel:+79150422651"
   }
   
   return (
@@ -16,15 +16,15 @@ export default function Footer() {
         </div>
         <div className={styles.contacts}>
           <p>Контакты:</p>
-          <a className={styles.contact_item}>
+          <a className={styles.contact_item} href={hrefs.wp}>
             <img src="../src/assets/icons/WP.svg" alt="" />
             <p>Whatsapp</p>
           </a>
-          <a className={styles.contact_item} href="mailto:skyline-a.c@yandex.ru">
+          <a className={styles.contact_item} href={hrefs.email}>
             <img src="../src/assets/icons/Email.svg" alt="" />
             <p>skyline-a.c@yandex.ru</p>
           </a>
-          <a className={styles.contact_item} href="tel:+79150422651">
+          <a className={styles.contact_item} href={hrefs.phone}>
             <img src="../src/assets/icons/Phone.svg" alt="" />
             <p>+7(915)042-26-51</p>
           </a>
