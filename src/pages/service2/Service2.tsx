@@ -3,7 +3,7 @@ import Header from "../../components/header/Header";
 import SmallForm from "../../components/small_form/SmallForm";
 // import Statistics from "../../components/statistics/Statistics";
 import styles from "./Service2.module.scss";
-
+import big_car from "/src/assets/img/big_car.png"
 export default function Service2() {
   return (
     <main className={styles.main}>
@@ -21,7 +21,7 @@ export default function Service2() {
             </p>
             <SmallForm />
           </div>
-          <img src="/src/assets/img/big_car.png" alt="" />
+          <img src={big_car} alt="" />
         </div>
         <Footer />
     </main>

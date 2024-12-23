@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./BigForm.module.scss";
+import gruz3 from "/src/assets/img/gruz3.png"
 
 export default function BigForm() {
     const [name, setName] = useState("");
@@ -60,7 +61,7 @@ export default function BigForm() {
                 </button>
                  {message && <p style={{marginTop: '10px', color: message.startsWith('Ошибка') ? 'red' : 'green'}}>{message}</p>}
             </form>
-            <img src="/src/assets/img/gruz3.png" alt="" width="795px" height="351px" />
+            <img src={gruz3} alt="" width="795px" height="351px" />
         </div>
     );
 }

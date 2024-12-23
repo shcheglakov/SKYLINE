@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import styles from './Header.module.scss';
 import { NavLink } from "react-router"; // Исправлено на "react-router-dom"
+import logo_text_4x from "/src/assets/logo/logo_text_4x.png"
+import MobileMenu from "/src/assets/icons/MobileMenu.svg"
+import CloseMenu from "/src/assets/icons/CloseMenu.svg"
 
 export default function Header() {
   const [width, setWidth] = useState(window.innerWidth);
@@ -23,7 +26,7 @@ export default function Header() {
       <header className={styles.header}>
         {width > 800 ? (
           <>
-            <img src="/src/assets/logo/logo_text_4x.png" alt="" width="218px" height="56px" />
+            <img src={logo_text_4x} alt="" width="218px" height="56px" />
             <nav>
               <ul>
                 <li>
@@ -76,10 +79,10 @@ export default function Header() {
         ) : (
               <div className={styles.mobile_menu}>
                 <div className={styles.mobile_logo}>
-                  <img src="/src/assets/logo/logo_text_4x.png" alt="" width="200px" height="54px" />
+                  <img src={logo_text_4x} alt="" width="200px" height="54px" />
                 </div>
                 <button onClick={() => setMenuOpen(true)}>
-                  <img src="/src/assets/icons/MobileMenu.svg" alt="" />
+                  <img src={MobileMenu} alt="" />
                 </button>
               </div>
         )}
@@ -88,7 +91,7 @@ export default function Header() {
         <div className={styles.mobile_menu_full}>
           <div className={styles.mobile_menu_full_content}>
             <button className={styles.mobile_menu_full_close} onClick={() => setMenuOpen(false)}>
-               <img src="/src/assets/icons/CloseMenu.svg" alt="" width="32px" />
+               <img src={CloseMenu} alt="" width="32px" />
             </button>
             <nav>
               <ul>
