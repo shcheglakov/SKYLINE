@@ -20,15 +20,15 @@ export default function Footer() {
         </div>
         <div className={styles.contacts}>
           <p>Контакты:</p>
-          <a className={styles.contact_item} href={hrefs.wp}>
+          <a className={styles.contact_item} href={hrefs.wp} target="_blank">
             <img src={WP} alt="" />
             <p>Whatsapp</p>
           </a>
-          <a className={styles.contact_item} href={hrefs.email}>
+          <a className={styles.contact_item} href={hrefs.email} target="_blank">
             <img src={Email} alt="" />
             <p>skyline-a.c@yandex.ru</p>
           </a>
-          <a className={styles.contact_item} href={hrefs.phone}>
+          <a className={styles.contact_item} href={hrefs.phone} target="_blank">
             <img src={Phone} alt="" />
             <p>+7(915)042-26-51</p>
           </a>
