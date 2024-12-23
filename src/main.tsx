@@ -9,7 +9,7 @@ import Service2 from './pages/service2/Service2'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename='/React'>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/service1' element={<Service1 />} />
