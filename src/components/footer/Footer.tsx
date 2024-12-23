@@ -11,21 +11,21 @@ export default function Footer() {
     <div className={styles.footer_bg} id="footer">
       <footer className={styles.footer} id="footer">
         <div className={styles.logo_container}>
-          <img src="../src/assets/logo/logo_4x.png" alt="" width="197px" />
+          <img src="/src/assets/logo/logo_4x.png" alt="" width="197px" />
           <p>Ваши надежные крылья в <br/>мире грузоперевозок</p>
         </div>
         <div className={styles.contacts}>
           <p>Контакты:</p>
           <a className={styles.contact_item} href={hrefs.wp}>
-            <img src="../src/assets/icons/WP.svg" alt="" />
+            <img src="/src/assets/icons/WP.svg" alt="" />
             <p>Whatsapp</p>
           </a>
           <a className={styles.contact_item} href={hrefs.email}>
-            <img src="../src/assets/icons/Email.svg" alt="" />
+            <img src="/src/assets/icons/Email.svg" alt="" />
             <p>skyline-a.c@yandex.ru</p>
           </a>
           <a className={styles.contact_item} href={hrefs.phone}>
-            <img src="../src/assets/icons/Phone.svg" alt="" />
+            <img src="/src/assets/icons/Phone.svg" alt="" />
             <p>+7(915)042-26-51</p>
           </a>
         </div>

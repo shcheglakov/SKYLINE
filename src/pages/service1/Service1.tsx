@@ -20,7 +20,7 @@ export default function Service1() {
               оплаты. Будьте уверены, что Ваш груз в надеждных руках.</p>
             <SmallForm />
           </div>
-          <img src="../src/assets/img/gruz1.png" alt="" />
+          <img src="/src/assets/img/gruz1.png" alt="" />
         </div>
         <Footer />
     </main>

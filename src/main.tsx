@@ -9,9 +9,9 @@ import Service2 from './pages/service2/Service2'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter basename='/React'>
+    <BrowserRouter basename={process.env.NODE_ENV === 'production' ? '/SKYLINE' : '/'} >
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route index path='/' element={<Home />} />
         <Route path='/service1' element={<Service1 />} />
         <Route path='/service2' element={<Service2 />} />
         <Route path='/info' element={<Info />} />

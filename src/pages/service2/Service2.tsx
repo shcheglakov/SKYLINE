@@ -21,7 +21,7 @@ export default function Service2() {
             </p>
             <SmallForm />
           </div>
-          <img src="../src/assets/img/big_car.png" alt="" />
+          <img src="/src/assets/img/big_car.png" alt="" />
         </div>
         <Footer />
     </main>

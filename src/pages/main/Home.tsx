@@ -71,7 +71,7 @@ export default function Main() {
       <Header />
       <div className={styles.main_container}>
         <div className={styles.main_content}>
-          <img src="../src/assets/logo/logo_4x.png" alt="" width="300px" />
+          <img src="/src/assets/logo/logo_4x.png" alt="" width="300px" />
           <p>
           Skyline Air Cargo – команда профессионалов, предоставляющая 
           полный спектр услуг по грузоперевозкам собственным транспортом. 
@@ -85,7 +85,7 @@ export default function Main() {
         ) : (
           <div className={styles.mobile_cont}>
             <SmallForm />
-            <img src="../src/assets/img/gruz1.png" alt="" width="300px" />
+            <img src="/src/assets/img/gruz1.png" alt="" width="300px" />
           </div>
         )}
         
@@ -106,9 +106,9 @@ export default function Main() {
         </div>
       </div>
       <div className={styles.partners}> 
-        <img src="../src/assets/img/wb.svg" alt="Wildberries" className={styles.wb_img} />
-        <img src="../src/assets/img/dpd.svg" alt="Dpd" className={styles.dpd_img} />
-        <img src="../src/assets/img/rs.svg" alt="Русский свет" className={styles.rs_img} />
+        <img src="/src/assets/img/wb.svg" alt="Wildberries" className={styles.wb_img} />
+        <img src="/src/assets/img/dpd.svg" alt="Dpd" className={styles.dpd_img} />
+        <img src="/src/assets/img/rs.svg" alt="Русский свет" className={styles.rs_img} />
       </div>
       <div className={styles.reviews}>
         <h1>ОТЗЫВЫ</h1>
@@ -120,7 +120,7 @@ export default function Main() {
                   <p>{item.name}</p>
                     <div className={styles.rating}>
                         {[...Array(item.rating)].map((_, i) => (
-                        <img key={i} src="../src/assets/img/star.svg" alt="Звезда рейтинга" />
+                        <img key={i} src="/src/assets/img/star.svg" alt="Звезда рейтинга" />
                     ))}
                 </div>
               </div>
