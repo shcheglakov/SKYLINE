@@ -60,7 +60,7 @@ export default function BigForm() {
                 </button>
                  {message && <p style={{marginTop: '10px', color: message.startsWith('Ошибка') ? 'red' : 'green'}}>{message}</p>}
             </form>
-            <img src="../src/assets/img/form_car.png" alt="" width="795px" height="351px" />
+            <img src="../src/assets/img/gruz3.png" alt="" width="795px" height="351px" />
         </div>
     );
 }

@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 330px;
+    min-width: 330px;
     height: 262px;
     padding-left: 25px;
     padding-right: 25px;
@@ -37,7 +37,7 @@
 
 @media (max-width: 1239px) {
     .form_conatiner {
-        width: 272px;
+        min-width: 272px;
         height: 219px;
         padding-left: 12px;
         padding-right: 12px;
@@ -52,7 +52,7 @@
             background-color: #E6E6E6;
             border: 0;
             outline: none;
-            border-bottom: 2px solid black;
+            border-bottom: 1px solid black;
             font-family: "MT-Regular";
             font-size: 14px;
             color: #F39200;

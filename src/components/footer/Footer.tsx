@@ -31,7 +31,7 @@ export default function Footer() {
         </div>
 
         <div className={styles.info}>
-          <p>Информация:</p>
+          <p className={styles.title}>Информация:</p>
           <p>ООО «Скайлайн айр карго»</p>
           <p>ИНН: 5047072779</p>
           <p>КПП: 504701001</p>

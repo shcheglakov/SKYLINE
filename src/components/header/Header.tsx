@@ -52,7 +52,7 @@ export default function Header() {
                         to='/service2'
                         className={({ isActive }) => (isActive ? "active_link" : "")}
                       >
-                        Большой груз
+                        Крупногабарит
                       </NavLink>
                     </li>
                   </ul>
@@ -121,7 +121,7 @@ export default function Header() {
                         onClick={() => setMenuOpen(false)}
                         className={({ isActive }) => (isActive ? "active_link" : "")}
                       >
-                        Большой груз
+                        Крупногабарит
                       </NavLink>
                     </li>
                   </ul>

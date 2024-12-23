@@ -46,20 +46,23 @@ export default function Main() {
     {
       id: 1,
       rating: 5,
-      name: "Иван А.И",
-      text: "*************************************",
+      name: 'АО "ДПД РУС"',
+      text: "Мы сотрудничаем с компанией ООО «Скайлайн аир карго» в области транспортной логистики. Качество предоставляемых транспортно-экспедиционных услуг характеризуется высоким уровнем профессионализма: комплексностью, своевременностью, оперативностью, индивидуальным и партнерским подходом в решении всех возникавших вопросов. Все это обеспечивает максимально комфортное взаимодействие. Мы готовы рекомендовать ООО «Скайлайн анр карго» как надежного стратегического партнера, выполняющего свои обязательства в соответствии с высокими профессиональными стандартами.",
+      img: "../src/assets/img/otziv1.png"
     },
     {
       id: 2,
       rating: 5,
-      name: "Иван А.И",
-      text: "*************************************",
+      name: 'ООО "Вайлдберриз"',
+      text: "ООО «Вайлдберриз» сообщает, что Общество с ограниченной ответственностью «Скайлайн анр карго», является нашим деловым партнером, своевременно и в полном объеме исполияет свои обязательства по договорам, а также соблюдает все устные и нисьменные договоренности. Мы высоко оцепиваем его деловую репутацию как ценного и ответственного партнера, и планируем дальнейшес сотрудничество с ним.",
+      img: "../src/assets/img/otziv2.png"
     },
     {
       id: 3,
       rating: 5,
-      name: "Иван А.И",
-      text: "*************************************",
+      name: 'ООО "Русский свет"',
+      text: "Настоящим нисьмом выражаем Вам свою признательность и благодарность за сотрудничество с нашей комнанией в сфере международных перевозок. За весь период сотрудничества компания ООО «Скайлайн аир карго» зарекомендовала себя как стабильный и ответственный партнер, веегда обеспечивая гибкий подход к пашим потребностям, высокую оперативность и максимальную падежность перевозок. Особо следует подчеркпуть тот факт, что отличительной чертой работы компании «Скайлайн аир карго» являстся оперативность и высокая организованность сотрудников компании, что наряду с готовностью быстро реагировать на возникающие обстоятельства позволяет решать самые нестандартные ситуации.",
+      img: "../src/assets/img/otziv3.png"
     }
   ]
 
@@ -80,7 +83,10 @@ export default function Main() {
         {width > 800 ? (
           <BigForm />
         ) : (
-          <SmallForm />
+          <div className={styles.mobile_cont}>
+            <SmallForm />
+            <img src="../src/assets/img/gruz1.png" alt="" width="300px" />
+          </div>
         )}
         
       </div>
@@ -100,24 +106,27 @@ export default function Main() {
         </div>
       </div>
       <div className={styles.partners}> 
-        <img src="../src/assets/img/wb.svg" alt="" className={styles.wb_img} />
-        <img src="../src/assets/img/dpd.svg" alt="" className={styles.dpd_img} />
-        <img src="../src/assets/img/rs.svg" alt="" className={styles.rs_img} />
+        <img src="../src/assets/img/wb.svg" alt="Wildberries" className={styles.wb_img} />
+        <img src="../src/assets/img/dpd.svg" alt="Dpd" className={styles.dpd_img} />
+        <img src="../src/assets/img/rs.svg" alt="Русский свет" className={styles.rs_img} />
       </div>
       <div className={styles.reviews}>
         <h1>ОТЗЫВЫ</h1>
-        <div className={styles.reviews_conatiner}>
+        <div className={styles.reviews_container}>
           {reviews.map((item) => (
             <div className={styles.reviews_item} key={item.id}>
-              <div className={styles.nr_container}>
-                <p>{item.name}</p>
-                <div className={styles.rating}>
-                  {[...Array(item.rating)].map((_, i) => (
-                    <img key={i} src="../src/assets/img/star.svg" alt="Звезда рейтинга" />
-                  ))}
+              <div className={styles.nr_box}>
+                <div className={styles.nr_container}>
+                  <p>{item.name}</p>
+                    <div className={styles.rating}>
+                        {[...Array(item.rating)].map((_, i) => (
+                        <img key={i} src="../src/assets/img/star.svg" alt="Звезда рейтинга" />
+                    ))}
                 </div>
               </div>
               <p>{item.text}</p>
+            </div>
+            <img src={item.img} alt="" />
             </div>
           ))}
         </div>
