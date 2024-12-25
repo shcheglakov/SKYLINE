@@ -4,7 +4,7 @@ export default function Statistics() {
   const statistics_kol = [
     {
       id: 1,
-      kol: "10000",
+      kol: "10 000",
       title: "Отправленных заказов"
     },
     {
