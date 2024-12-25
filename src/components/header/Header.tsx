@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import styles from './Header.module.scss';
-import { NavLink } from "react-router"; // Исправлено на "react-router-dom"
+import { NavLink } from "react-router";
 import logo_text_4x from "/src/assets/logo/logo_text_4x.png"
 import MobileMenu from "/src/assets/icons/MobileMenu.svg"
 import CloseMenu from "/src/assets/icons/CloseMenu.svg"
 
 export default function Header() {
   const [width, setWidth] = useState(window.innerWidth);
-  const [menuOpen, setMenuOpen] = useState(false); // Изменено на false, чтобы меню было закрыто по умолчанию
+  const [menuOpen, setMenuOpen] = useState(false); 
 
   useEffect(() => {
     const handleResize = () => {
