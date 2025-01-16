@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from 'react-intersection-observer';
 import BigForm from "../../components/big_form/BigForm";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
@@ -17,6 +19,8 @@ import otziv3 from "/src/assets/img/otziv3.png"
 
 export default function Main() {
   const [width, setWidth] = useState(window.innerWidth);
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
 
   useEffect(() => {
     const handleResize = () => {
@@ -29,6 +33,16 @@ export default function Main() {
       window.removeEventListener('resize', handleResize);
     };
   },[])
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.5, ease: "easeInOut" }
+      });
+    }
+  }, [controls, inView]);
 
   const items = [
     {
@@ -78,46 +92,84 @@ export default function Main() {
   return (
     <main className={styles.main}>
       <Header />
-      <div className={styles.main_container}>
-        <div className={styles.main_content}>
+      <motion.div className={styles.main_container}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <motion.div className={styles.main_content}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           <img src={logo_4x} alt="" width="300px" />
-          <p>Skyline Air Cargo – команда профессионалов, предоставляющая полный спектр услуг по грузоперевозкам собственным транспортом. Мы обеспечиваем надёжную и эффективную доставку грузов любого объёма и типа, независимо от сложности маршрута. Будем рады начать долгосрочное сотрудничество с новыми Партнерами.</p>
-        </div>
+          <p>Skyline Air Cargo – это динамично развивающаяся компания,предоставляющая полный спектр услуг по грузоперевозкам различными видами собственного транспорта. Мы обеспечиваем надежную и эффективную доставку грузов любого объема, независимо от сложности маршрута.</p>
+        </motion.div>
         {width > 800 ? (
           <BigForm />
         ) : (
-          <div className={styles.mobile_cont}>
+          <motion.div className={styles.mobile_cont}
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <SmallForm />
             <img src={gruz1} alt="" width="300px" />
-          </div>
+          </motion.div>
         )}
-        
-      </div>
-      <div className={styles.block_why}>
+      </motion.div>
+      <motion.div className={styles.block_why}
+        ref={ref}
+        initial={{ opacity: 0, y: 50 }}
+        animate={controls}
+      >
         <div className={styles.text_cont}>
           <h1>Почему выбирают<br/>именно нас?</h1>
           <span></span>
         </div>
-        <div className={styles.items_cont}>
+        <motion.div className={styles.items_cont}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
           {items.map((item) => (
-            <div className={styles.item} key={item.id}>
+            <motion.div className={styles.item} key={item.id}
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 100 }}
+            >
               <h1 style={{color: item.id_color}}>{item.id}</h1>
               <h2>{item.title}</h2>
               <p>{item.dest}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
-      </div>
-      <div className={styles.partners}> 
+        </motion.div>
+      </motion.div>
+      <motion.div className={styles.partners}
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      > 
         <img src={wb} alt="Wildberries" className={styles.wb_img} />
         <img src={dpd} alt="Dpd" className={styles.dpd_img} />
         <img src={rs} alt="Русский свет" className={styles.rs_img} />
-      </div>
-      <div className={styles.reviews}>
+      </motion.div>
+      <motion.div className={styles.reviews}
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
         <h1>ОТЗЫВЫ</h1>
-        <div className={styles.reviews_container}>
+        <motion.div className={styles.reviews_container}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
           {reviews.map((item) => (
-            <div className={styles.reviews_item} key={item.id}>
+            <motion.div className={styles.reviews_item} key={item.id}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
               <div className={styles.nr_box}>
                 <div className={styles.nr_container}>
                   <p>{item.name}</p>
@@ -130,10 +182,10 @@ export default function Main() {
               <p>{item.text}</p>
             </div>
             <img src={item.img} alt="" />
-            </div>
+            </motion.div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
       <Statistics />
       <Footer />
     </main>

@@ -1,24 +1,66 @@
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import SmallForm from "../../components/small_form/SmallForm";
-// import Statistics from "../../components/statistics/Statistics";
 import styles from "./Service2.module.scss";
-import big_car from "/src/assets/img/big_car.png"
+import cruzovik from "../../assets/img/crusovik.png";
+import { motion } from "framer-motion";
+
 export default function Service2() {
   return (
-    <main className={styles.main}>
-        <Header />
-        <div className={styles.content}>
-          <h1>Ежедневная доставка крупногабаритного товара.</h1>
-          <div className={styles.content_2}>
-            <p>
-            Наши собственные фуры грузоподъёмностью до 20 тонн готовы на ежедневной основе обслуживать ваши маршруты. Согласовываем удобный для вас график отгрузки и маршрут, заключаем договор, предоставляем транспорт и водителя. Прозрачная система работы и оплаты. Вы можете быть уверены, что ваш груз в надёжных руках.
-            </p>
+    <motion.main
+      className={styles.main}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <Header />
+      <motion.div
+        className={styles.content}
+        initial={{ y: 50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <motion.h1
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          Ежедневная доставка крупногабаритного товара.
+        </motion.h1>
+        <motion.div
+          className={styles.content_2}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+        >
+          <motion.p
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+          >
+            Наши собственные фуры грузоподъёмностью до 20 тонн готовы на
+            ежедневной основе обслуживать ваши маршруты. Согласовываем удобный
+            для вас график отгрузки и маршрут, заключаем договор, предоставляем
+            транспорт и водителя. Прозрачная система работы и оплаты. Вы можете
+            быть уверены, что ваш груз в надёжных руках.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 1.0 }}
+          >
             <SmallForm />
-          </div>
-          <img src={big_car} alt="" />
-        </div>
-        <Footer />
-    </main>
-  )
+          </motion.div>
+        </motion.div>
+        <motion.img
+          src={cruzovik}
+          alt=""
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+        />
+      </motion.div>
+      <Footer />
+    </motion.main>
+  );
 }
